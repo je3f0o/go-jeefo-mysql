@@ -1,4 +1,4 @@
-module github.com/je3f0o/go-mysql
+module github.com/je3f0o/go-jeefo-mysql
 
 go 1.19
 
