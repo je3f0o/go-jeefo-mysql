@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>go-mysql - Lightweight MySQL</title>
+
+<link type="text/css" rel="stylesheet" href="lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.19.5";</script>
+<script src="lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="#">Lightweight MySQL</a></div>
+<div class="top-heading" id="heading-narrow"><a href="#">GoDoc</a></div>
+<a href="#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="/search">
+<div id="menu">
+
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package mysql
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/je3f0o/go-mysql"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				<p>This is a very simple and lightweight MySQL library for learning the Go
+programming language. It was written in my first three days of learning Go.
+<p>Please note that this library currently does not support multiple different
+database connections. Most microservices typically only have one database,
+but for projects that require multiple different database connections, this
+library may be updated in the future to support them.
+
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+				<dd><a href="#pkg-variables">Variables</a></dd>
+			
+			
+				
+				<dd><a href="#Delete">func Delete(table string, where map[string]interface{}, args ...map[string]interface{}) sql.Result</a></dd>
+			
+				
+				<dd><a href="#DeleteFirst">func DeleteFirst(table string, where map[string]interface{}, options ...map[string]interface{}) sql.Result</a></dd>
+			
+				
+				<dd><a href="#EscapeId">func EscapeId(id string, ignore_dot ...bool) string</a></dd>
+			
+				
+				<dd><a href="#Exec">func Exec(query string, values ...interface{}) sql.Result</a></dd>
+			
+				
+				<dd><a href="#ExecQuery">func ExecQuery(query string, values ...interface{}) *sql.Rows</a></dd>
+			
+				
+				<dd><a href="#First">func First(table string, where map[string]interface{}, options ...map[string]interface{}) map[string]interface{}</a></dd>
+			
+				
+				<dd><a href="#Init">func Init(cfg *Config)</a></dd>
+			
+				
+				<dd><a href="#Insert">func Insert(table string, data map[string]interface{}) sql.Result</a></dd>
+			
+				
+				<dd><a href="#InsertRow">func InsertRow(table string, data map[string]interface{}) sql.Result</a></dd>
+			
+				
+				<dd><a href="#ParseDatetime">func ParseDatetime(value interface{}) time.Time</a></dd>
+			
+				
+				<dd><a href="#ParseUint32">func ParseUint32(value interface{}) uint32</a></dd>
+			
+				
+				<dd><a href="#Select">func Select(table string, where map[string]interface{}, args ...map[string]interface{}) []map[string]interface{}</a></dd>
+			
+				
+				<dd><a href="#Update">func Update(table string, data, where map[string]interface{}, args ...map[string]interface{}) sql.Result</a></dd>
+			
+				
+				<dd><a href="#UpdateFirst">func UpdateFirst(table string, data, where map[string]interface{}, options ...map[string]interface{}) sql.Result</a></dd>
+			
+			
+				
+				<dd><a href="#Config">type Config</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#NewConfig">func NewConfig() *Config</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="https://github.com/je3f0o/go-mysql/blob/master/mysql.go">mysql.go</a>
+			
+				<a href="https://github.com/je3f0o/go-mysql/blob/master/utils.go">utils.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+			<h2 id="pkg-variables">Variables</h2>
+			
+				<p>Set to `true` will be logging every query with values before executing.
+
+				<pre>var <span id="Debug">Debug</span> = <a href="#">false</a></pre>
+			
+		
+		
+			
+			
+			<h2 id="Delete">func <a href="https://github.com/je3f0o/go-mysql/blob/764d0bcd05d1cf56a1df3c538536cdf3e4183602/mysql.go#L271-L292">Delete</a>
+				<a class="permalink" href="#Delete">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Delete(
+    table <a href="#">string</a>,
+    where map[<a href="#">string</a>]interface{},
+    args ...map[<a href="#">string</a>]interface{},
+) <a href="#">sql</a>.<a href="#">Result</a></pre>
+			<p>Deletes data from a specified table.
+<p>Parameters:
+<ul>
+<li>`table`: The name of the table
+<li>`where`: The conditions to specify which records to delete
+<li>`options`: Additional options, such as &quot;order&quot; or &quot;limit&quot;
+</ul>
+<p>Returns:
+<ul>
+<li>sql.Result: Result of the delete operation
+</ul>
+
+			
+			
+
+		
+			
+			
+			<h2 id="DeleteFirst">func <a href="https://github.com/je3f0o/go-mysql/blob/764d0bcd05d1cf56a1df3c538536cdf3e4183602/mysql.go#L296-L303">DeleteFirst</a>
+				<a class="permalink" href="#DeleteFirst">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func DeleteFirst(
+    table <a href="#">string</a>,
+    where map[<a href="#">string</a>]interface{},
+    options ...map[<a href="#">string</a>]interface{},
+) <a href="#">sql</a>.<a href="#">Result</a></pre>
+			<p>Same api with `Delete(...)` method except it will override `options[&quot;limit&quot;]`
+to set 1.
+
+			
+			
+
+		
+			
+			
+			<h2 id="EscapeId">func <a href="https://github.com/je3f0o/go-mysql/blob/764d0bcd05d1cf56a1df3c538536cdf3e4183602/mysql.go#L62-L72">EscapeId</a>
+				<a class="permalink" href="#EscapeId">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func EscapeId(id <a href="#">string</a>, ignore_dot ...<a 
+      href="#">bool</a>) <a href="#">string</a></pre>
+			<p>Escapes a SQL identifier for safe use in a query.
+<p>Parameters:
+<ul>
+<li>`id`: SQL identifier a table or column name to be escaped
+<li>`ignore_dot`: Optional Boolean value, which when set to `true` the dot
+(.) character is not escaped
+</ul>
+<p>Returns:
+<ul>
+<li>string : the escaped identifier
+</ul>
+<p>Example:
+<pre>EscapeId(&quot;INFORMATION_SCHEMA.COLUMNS&quot;)       // output: `INFORMATION_SCHEMA`.`COLUMNS`
+EscapeId(&quot;some.weird.table.or.column&quot;, true) // output: `some.weird.table.or.column`
+</pre>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Exec">func <a href="https://github.com/je3f0o/go-mysql/blob/764d0bcd05d1cf56a1df3c538536cdf3e4183602/mysql.go#L327-L332">Exec</a>
+				<a class="permalink" href="#Exec">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Exec(query <a href="#">string</a>, values ...interface{}) <a 
+      href="#">sql</a>.<a href="#">Result</a></pre>
+			<p>Executes an user defined query.
+<p>Parameters:
+<ul>
+<li>`query`: the query to be executed
+<li>`values`: parameters to be passed to the query
+</ul>
+<p>Returns:
+<ul>
+<li>sql.Result: A Result summarizes an executed SQL query
+</ul>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ExecQuery">func <a href="https://github.com/je3f0o/go-mysql/blob/764d0bcd05d1cf56a1df3c538536cdf3e4183602/mysql.go#L313-L318">ExecQuery</a>
+				<a class="permalink" href="#ExecQuery">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ExecQuery(query <a href="#">string</a>, values ...interface{}) 
+      *<a href="#">sql</a>.<a href="#">Rows</a></pre>
+			<p>Executes an user defined query with values. Which is useful when user wants
+to use `sql.Rows.Scan(...)` method to convert datatypes.
+<p>Parameters:
+<ul>
+<li>`query`: the query to be executed
+<li>`values`: parameters to be passed to the query
+</ul>
+<p>Returns:
+<ul>
+<li>*sql.Rows: SQL rows cursor
+</ul>
+
+			
+			
+
+		
+			
+			
+			<h2 id="First">func <a href="https://github.com/je3f0o/go-mysql/blob/764d0bcd05d1cf56a1df3c538536cdf3e4183602/mysql.go#L163-L174">First</a>
+				<a class="permalink" href="#First">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func First(
+    table <a href="#">string</a>,
+    where map[<a href="#">string</a>]interface{},
+    options ...map[<a href="#">string</a>]interface{},
+) map[<a href="#">string</a>]interface{}</pre>
+			<p>Same api with `Select(...)` method except it will override `options[&quot;limit&quot;]`
+to set 1 and returns a single row if found.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Init">func <a href="https://github.com/je3f0o/go-mysql/blob/764d0bcd05d1cf56a1df3c538536cdf3e4183602/mysql.go#L75-L92">Init</a>
+				<a class="permalink" href="#Init">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Init(cfg *<a href="#Config">Config</a>)</pre>
+			<p>Initialize database connection with given configuration.
+
+			
+			
+
+		
+			
+			
+			<h2 id="Insert">func <a href="https://github.com/je3f0o/go-mysql/blob/764d0bcd05d1cf56a1df3c538536cdf3e4183602/mysql.go#L186-L203">Insert</a>
+				<a class="permalink" href="#Insert">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Insert(table <a href="#">string</a>, data map[<a 
+      href="#">string</a>]interface{}) <a href="#">sql</a>.<a href="#">Result</a></pre>
+			<p>Inserts data into a table.
+<p>Parameters:
+<ul>
+<li>`table`: The name of the table to insert into
+<li>`data`: A map of the column names and values to be inserted into the
+table
+</ul>
+<p>Returns:
+<ul>
+<li>sql.Result: Result of the insert statement execution
+</ul>
+<p>TODO: update this method to support multiple rows
+
+			
+			
+
+		
+			
+			
+			<h2 id="InsertRow">func <a href="https://github.com/je3f0o/go-mysql/blob/764d0bcd05d1cf56a1df3c538536cdf3e4183602/mysql.go#L214-L218">InsertRow</a>
+				<a class="permalink" href="#InsertRow">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func InsertRow(table <a href="#">string</a>, data map[<a 
+      href="#">string</a>]interface{}) <a href="#">sql</a>.<a href="#">Result</a></pre>
+			<p>Insert a single row data into a table.
+<p>Parameters:
+<ul>
+<li>`table`: The name of the table to insert into
+<li>`data`: A map of the column names and values to be inserted into the
+table
+</ul>
+<p>Returns:
+<ul>
+<li>sql.Result: Result of the insert statement execution
+</ul>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ParseDatetime">func <a href="https://github.com/je3f0o/go-mysql/blob/764d0bcd05d1cf56a1df3c538536cdf3e4183602/utils.go#L33-L37">ParseDatetime</a>
+				<a class="permalink" href="#ParseDatetime">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ParseDatetime(value interface{}) <a href="#">time</a>.<a href="#">Time</a></pre>
+			<p>Parse a SQL datetime string in the format &quot;2006-01-02 15:04:05.000&quot; and
+convert to a `time.Time`.
+<p>Parameters:
+<ul>
+<li>`value`: a string representation of a date and time
+</ul>
+<p>Returns:
+<ul>
+<li>`time.Time`: representation of the input string. If the input string is
+not in the expected format, it will panic.
+</ul>
+<p>Example:
+<pre>type _json map[string]interface{}
+
+where := _json{ &quot;access_token&quot;: access_token }
+data  := mysql.First(oauth2.TokensTable, where, _json{
+  &quot;columns&quot;: []string{
+    &quot;user_id&quot;,
+    &quot;access_token_expires_at&quot;,
+    &quot;refresh_token_expires_at&quot;,
+  },
+})
+if data == nil { return }
+expires_at := mysql.ParseDatetime(data[&quot;access_token_expires_at&quot;])
+// code...
+</pre>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ParseUint32">func <a href="https://github.com/je3f0o/go-mysql/blob/764d0bcd05d1cf56a1df3c538536cdf3e4183602/utils.go#L45-L49">ParseUint32</a>
+				<a class="permalink" href="#ParseUint32">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func ParseUint32(value interface{}) <a href="#">uint32</a></pre>
+			<p>Converts a string to uint32
+<p>Parameters:
+<ul>
+<li>`value`: representation of an integer
+</ul>
+<p>Returns:
+<ul>
+<li>`uint32`: converted integer as uint32
+</ul>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Select">func <a href="https://github.com/je3f0o/go-mysql/blob/764d0bcd05d1cf56a1df3c538536cdf3e4183602/mysql.go#L117-L159">Select</a>
+				<a class="permalink" href="#Select">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Select(
+    table <a href="#">string</a>,
+    where map[<a href="#">string</a>]interface{},
+    args ...map[<a href="#">string</a>]interface{},
+) []map[<a href="#">string</a>]interface{}</pre>
+			<p>Retrieve data from specified `table` with the given `where` condition and
+options.
+<p>Parameters:
+<ul>
+<li>`table`: name of the table to perform the SELECT query on
+<li>`where`: conditions to be used in the WHERE clause of the query
+<li>`options`: Optional map specify additional options
+</ul>
+<p>Options:
+<ul>
+<li>`column`: string, specify single column to return
+<li>`columns`: string array for multiple columns to return
+<li>`order`: string, order of the results
+<li>`offset`: int, this option will be discarded without limit
+<li>`limit`: int, maximum number of results
+</ul>
+<p>Returns:
+<ul>
+<li>[]map[string]interface{}: rows data returned by the query
+</ul>
+<p>Example:
+<pre>type _json map[string]interface{}
+
+where   := _json{&quot;user_id&quot;: user_id}
+options := _json{&quot;order&quot;: &quot;created_at DESC&quot;, &quot;limit&quot;: 30}
+rows    := mysql.Select(&quot;producst&quot;, where, optioins)
+</pre>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Update">func <a href="https://github.com/je3f0o/go-mysql/blob/764d0bcd05d1cf56a1df3c538536cdf3e4183602/mysql.go#L232-L250">Update</a>
+				<a class="permalink" href="#Update">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func Update(
+    table <a href="#">string</a>,
+    data, where map[<a href="#">string</a>]interface{},
+    args ...map[<a href="#">string</a>]interface{},
+) <a href="#">sql</a>.<a href="#">Result</a></pre>
+			<p>Updates the data in a table with specified conditions.
+<p>Parameters:
+<ul>
+<li>`table`: The name of the table to update
+<li>`data`: A map of field names and new values to update in the table
+<li>`where`: A map of conditions to determine which rows to update in the
+table
+<li>`options`: An optional set of options to specify order and limit for the
+update query
+</ul>
+<p>Returns:
+<ul>
+<li>sql.Result: Result of the update query
+</ul>
+
+			
+			
+
+		
+			
+			
+			<h2 id="UpdateFirst">func <a href="https://github.com/je3f0o/go-mysql/blob/764d0bcd05d1cf56a1df3c538536cdf3e4183602/mysql.go#L254-L261">UpdateFirst</a>
+				<a class="permalink" href="#UpdateFirst">&#xb6;</a>
+				
+				
+			</h2>
+			<pre>func UpdateFirst(
+    table <a href="#">string</a>,
+    data, where map[<a href="#">string</a>]interface{},
+    options ...map[<a href="#">string</a>]interface{},
+) <a href="#">sql</a>.<a href="#">Result</a></pre>
+			<p>Same api with `Update(...)` method except it will override `options[&quot;limit&quot;]`
+to set 1.
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="Config">type <a href="https://github.com/je3f0o/go-mysql/blob/764d0bcd05d1cf56a1df3c538536cdf3e4183602/mysql.go#L21-L28">Config</a>
+				<a class="permalink" href="#Config">&#xb6;</a>
+				
+				
+			</h2>
+			
+			<pre>type Config struct {
+<span id="Config.Host"></span>    Host     <a href="#">string</a> `yaml:&#34;host,omitempty&#34;`
+<span id="Config.Port"></span>    Port     <a href="#">int16</a>  `yaml:&#34;port,omitempty&#34;`
+<span id="Config.Socket"></span>    Socket   <a href="#">string</a> `yaml:&#34;socket,omitempty&#34;`
+<span id="Config.DBName"></span>    DBName   <a href="#">string</a> `yaml:&#34;name&#34;`
+<span id="Config.Username"></span>    Username <a href="#">string</a> `yaml:&#34;user&#34;`
+<span id="Config.Password"></span>    Password <a href="#">string</a> `yaml:&#34;pass&#34;`
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewConfig">func <a href="https://github.com/je3f0o/go-mysql/blob/764d0bcd05d1cf56a1df3c538536cdf3e4183602/mysql.go#L44-L49">NewConfig</a>
+					<a class="permalink" href="#NewConfig">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func NewConfig() *<a href="#Config">Config</a></pre>
+				<p>Returns a pointer to a newly allocated `Config` struct with default values
+for:
+<ul>
+<li>`Host` &quot;127.0.0.1&quot;
+<li>`Port` 3306
+</ul>
+
+				
+				
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.19.5 and godoc.<br>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>
