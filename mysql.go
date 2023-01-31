@@ -15,7 +15,7 @@ import (
 	"reflect"
 	"strings"
 
-	_ "github.com/go-sql-driver/mysql"
+	m "github.com/go-sql-driver/mysql"
 )
 
 type Config struct {
@@ -332,7 +332,10 @@ func Exec(query string, values ...interface{}) sql.Result {
 }
 
 func handle_error(err error, query string, values ...interface{}) {
-  panic(fmt.Errorf("MySQL Error: %s\nMessage: %v", query, err))
+  if mysql_err, ok := err.(*m.MySQLError); ok {
+    panic(&Error{query, values, mysql_err})
+  }
+  panic(err)
 }
 
 func order_query(options map[string]interface{}) string {
